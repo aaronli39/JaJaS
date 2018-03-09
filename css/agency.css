@@ -8,15 +8,15 @@ p {
 }
 
 a {
-     color: #fed136;
+     color: #ACE1AF;
 }
 
 a:hover {
-     color: #fec503;
+     color: #9DC6A4;
 }
 
 .text-primary {
-     color: #fed136 !important;
+     color:  #ACE1AF !important;
 }
 
 h1,
@@ -43,14 +43,18 @@ section h3.section-subheading {
      font-size: 16px;
      font-weight: 400;
      font-style: italic;
-     margin-bottom: 75px;
+     margin-top: 40px;
+     margin-bottom: 30px;
+     padding-left: 170px;
+     padding-right: 170px;
      text-transform: none;
+     text-align: center;
      font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
      section {
-          padding: 150px 0;
+          padding: 100px 0;
      }
 }
 
@@ -66,25 +70,25 @@ section h3.section-subheading {
 }
 
 .btn-primary {
-     background-color: #FAFF41;
+     background-color: #ACE1AF;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-     background-color: #fec810 !important;
+     background-color: #9DC6A4 !important;
      color: white;
 }
 
 .btn-primary:active, .btn-primary:focus {
-     box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+     box-shadow: 0 0 0 0.2rem rgba(172, 225, 175, 0.5) !important;
 }
 
 ::-moz-selection {
-     background: #fed136;
+     background: #ACE1AF;
      text-shadow: none;
 }
 
 ::selection {
-     background: #fed136;
+     background: #ACE1AF;
      text-shadow: none;
 }
 
@@ -97,7 +101,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-     background-color: #212529;
+     background-color: #ACE1AF;
 }
 
 #mainNav .navbar-toggler {
@@ -107,7 +111,7 @@ img::-moz-selection {
      text-transform: uppercase;
      color: white;
      border: 0;
-     background-color: #fed136;
+     background-color: #ACE1AF;
      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -119,7 +123,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-     color: #FCE11B;
+     color: #ACE1AF;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -132,7 +136,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-     color: #FCE11B;
+     color: #ACE1AF;
 }
 
 @media (min-width: 992px) {
@@ -248,7 +252,7 @@ header.masthead .intro-text .intro-heading {
      -moz-transition: all ease 0.5s;
      transition: all ease 0.5s;
      opacity: 0;
-     background: rgba(254, 209, 54, 0.9);
+     background: #ACE1AF;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -452,7 +456,7 @@ header.masthead .intro-text .intro-heading {
      color: white;
      border: 7px solid #e9ecef;
      border-radius: 100%;
-     background-color: #fed136;
+     background-color: #9DC6A4;
 }
 
 .timeline > li .timeline-image h4 {

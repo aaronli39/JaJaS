@@ -162,6 +162,10 @@
   line-height: 2em;
   vertical-align: middle;
 }
+
+.fa-stack .fa-circle {
+     color: white;
+}
 .fa-stack-1x,
 .fa-stack-2x {
   position: absolute;
