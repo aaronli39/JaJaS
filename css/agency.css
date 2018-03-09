@@ -12,7 +12,7 @@ a {
 }
 
 a:hover {
-     color: #9DC6A4;
+     color: #ACE1AF;
 }
 
 .text-primary {
@@ -123,7 +123,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-     color: #ACE1AF;
+     color: #9DC6A4;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -136,7 +136,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-     color: #ACE1AF;
+     color: #9DC6A4;
 }
 
 @media (min-width: 992px) {
@@ -147,7 +147,7 @@ img::-moz-selection {
           -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
           transition: padding-top 0.3s, padding-bottom 0.3s;
           border: none;
-          background-color: transparent;
+          background-color: black;
      }
      #mainNav .navbar-brand {
           font-size: 1.75em;
@@ -161,7 +161,7 @@ img::-moz-selection {
      #mainNav.navbar-shrink {
           padding-top: 0;
           padding-bottom: 0;
-          background-color: #212529;
+          background-color: black;
      }
      #mainNav.navbar-shrink .navbar-brand {
           font-size: 1.25em;
@@ -697,5 +697,5 @@ ul.social-buttons li a {
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-     background-color: #fed136;
+     background-color: #9DC6A4;
 }
