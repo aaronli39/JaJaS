@@ -250,7 +250,10 @@
 
                     function payTotal(){
                          var poopPrice = document.getElementById("poo").value * 0.30;
-                         document.getElementById('payPrice').innerHTML = "Pay $" + poopPrice;
+                         var ret = "Pay $";
+                         ret += poopPrice;
+                         ret = ret.substring(0,10);
+                         document.getElementById('payPrice').innerHTML = ret;
                     }
 
                     </script>
