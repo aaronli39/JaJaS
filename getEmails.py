@@ -14,7 +14,7 @@ def go():
 
     print 'Content-type: text/html\n\n'
 
-    print '<html><body><table>'
+    print '<html><body><table border="1">'
 
     lEmail = strEmails.split('\n')
     for wholeEmail in lEmail:
@@ -25,6 +25,6 @@ def go():
             print '<td><p>' + str(emailComponent) + '</p></td>'
         print '</tr>'
     print '</table></body></html>'
-        
-        
+
+go()
     
