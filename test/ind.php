@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 	$mail->Port = 587;
      $mail->addAddress('jchirinos@jajas.store');
      $mail->setFrom($email_from);
-     $mail->Subject = "Biggie Peepee";
+     $mail->Subject = "JaJaS Selling Inquirie";
      $mail->isHTML(true);
      $mail->Body = $comments;
 
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
      <main>
-          <center><p> SEND EMAIL</p>
+          <center><p> Sell your Compost to Compoober!</p>
                <?php if ($msg != "") echo "$msg<br><br>"; ?>
                <form class="" action="ind.php" method="post">
                     <input type="text" name="name" placeholder="Full name">

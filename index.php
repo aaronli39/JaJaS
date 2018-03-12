@@ -3,9 +3,9 @@ $msg = "";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require './test/phpmailer/phpmailer/src/Exception.php';
-require './test/phpmailer/phpmailer/src/PHPMailer.php';
-require './test/phpmailer/phpmailer/src/SMTP.php';
+require './phpmailer/phpmailer/src/Exception.php';
+require './phpmailer/phpmailer/src/PHPMailer.php';
+require './phpmailer/phpmailer/src/SMTP.php';
 
 if (isset($_POST['submit'])) {
      $first_name = $_POST['name']; // required
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 	$mail->Port = 587;
      $mail->addAddress('jchirinos@jajas.store');
      $mail->setFrom($email_from);
-     $mail->Subject = "Biggie Peepee";
+     $mail->Subject = "Hello JaJaS, you have an email!";
      $mail->isHTML(true);
      $mail->Body = $comments;
 
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
      <meta name="description" content="">
      <meta name="author" content="">
 
-     <title>JaJaS - Your Gardening Essentials</title>
+     <title>Compoober - Your Gardening Essentials</title>
 
      <!-- Bootstrap core CSS -->
      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
      <!-- Navigation -->
      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
           <div class="container">
-               <a class="navbar-brand js-scroll-trigger" href="#page-top">JaJaS</a>
+               <a class="navbar-brand js-scroll-trigger" href="#page-top">Compoober</a>
                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
@@ -93,7 +93,7 @@ if (isset($_POST['submit'])) {
                               <a class="nav-link js-scroll-trigger" href="#purchase">Purchase</a>
                          </li>
                          <li class="nav-item">
-                              <a class="nav-link js-scroll-trigger" href="#sell">Sell</a>
+                              <a class="nav-link js-scroll-trigger" href="test/ind.php">Sell</a>
                          </li>
                          <li class="nav-item">
                               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -107,7 +107,7 @@ if (isset($_POST['submit'])) {
      <header class="masthead">
           <div class="container">
                <div class="intro-text">
-                    <div class="intro-lead-in">Welcome to JaJaS!</div>
+                    <div class="intro-lead-in">Welcome to Compoober!</div>
                     <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#about">Tell Me More</a>
                </div>
@@ -135,10 +135,10 @@ if (isset($_POST['submit'])) {
                     <div class="col-md-4">
                          <span class="fa-stack fa-4x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
+                              <i class="fa fa-house fa-stack-1x fa-inverse"></i>
                          </span>
-                         <h4 class="service-heading">Tools</h4>
-                         <p class="text-muted">We sell a multitude of garden tools; whatever you need for your garden, we have it!</p>
+                         <h4 class="service-heading">Local</h4>
+                         <p class="text-muted">Our main goal is to deliver compost and products, locally.</p>
                     </div>
                     <div class="col-md-4">
                          <span class="fa-stack fa-4x">
@@ -153,39 +153,55 @@ if (isset($_POST['submit'])) {
      </section>
 
      <!-- Purchase -->
-     <section class="bg-light" id="purchase">
+     <section class="bg-light text-center" id="purchase">
           <div class="container">
                <h2 class="section-heading text-uppercase">Purchase</h2>
-               <!--
-               <form action=" /poop.php" target = "_blank">
-               Pounds of Shit: <br>
-               <input type="number" name="pounds" value="pounds"><br>
-               <input type="submit" value="Press me for shit">
-          </form> -->
-
-          <form action="" method="POST">
-               <script
-               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-               data-key="pk_test_SmD0TWrsgK81mAHarwi7nClz"
-               data-amount="999"
-               data-name="Compoober"
-               data-description="Uber - But for Shit"
-               data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-               data-locale="auto"
-               data-currency="usd"
-               data-shipping-address
-               data-zip-code="true">
-               </script>
-          </form>
+               <img src="smallcompost.png" style="width:40%;height:300px;border-radius:40%;">
+               <h3><i>Small Compost</i></h3>
+               <form action="chargeSmall.php" method="post">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_live_nIA6QW6hqxkYvpZWViXdBzip"
+                    data-amount="999"
+                    data-name="Compoober"
+                    data-description="Uber - But for Poo"
+                    data-image="logo.png"
+                    data-locale="auto"
+                    data-currency="usd"
+                    data-zip-code="true">
+                    </script>
+               </form>
+               <br></br>
+               <img src="mediumcompost.png" style="width:40%;height:300px;border-radius:40%;">
+               <h3><i>Medium Compost</i></h3>
+               <form action="chargeMedium.php" method="post">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_live_nIA6QW6hqxkYvpZWViXdBzip"
+                    data-amount="1999"
+                    data-name="Compoober"
+                    data-description="Uber - But for Poo"
+                    data-image="logo.png"
+                    data-locale="auto"
+                    data-currency="usd"
+                    data-zip-code="true">
+                    </script>
+               </form>
+               <br></br>
+               <img src="largecompost.png" style="width:40%;height:300px;border-radius:40%;">
+               <h3><i>Large Compost</i></h3>
+               <form action="chargeLarge.php" method="post">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_live_nIA6QW6hqxkYvpZWViXdBzip"
+                    data-amount="2999"
+                    data-name="Compoober"
+                    data-description="Uber - But for Poo"
+                    data-image="logo.png"
+                    data-locale="auto"
+                    data-currency="usd"
+                    data-zip-code="true">
+                    </script>
+               </form>
      </div>
 
-</section>
-
-<!-- Sell -->
-<section class="bg" id="sell">
-     <div class="container">
-          <h2 class="section-heading text-uppercase">Sell</h2>
-     </div>
 </section>
 
 <!-- Portfolio Grid -->
@@ -314,21 +330,21 @@ if (isset($_POST['submit'])) {
                               <div class="team-member">
                                    <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
                                    <h4></h4>
-                                   <p class="text-muted">Team Leader</p>
+                                   <p class="text-muted">CEO/CFO</p>
                               </div>
                          </div>
                          <div class="col-sm-4">
                               <div class="team-member">
                                    <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
                                    <h4></h4>
-                                   <p class="text-muted">Marketer</p>
+                                   <p class="text-muted">COO</p>
                               </div>
                          </div>
                          <div class="col-sm-4">
                               <div class="team-member">
                                    <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
                                    <h4></h4>
-                                   <p class="text-muted">Web Designer</p>
+                                   <p class="text-muted">CIO</p>
                               </div>
                          </div>
                     </div>
@@ -337,14 +353,14 @@ if (isset($_POST['submit'])) {
                               <div class="team-member">
                                    <img class="mx-auto rounded-circle" src="img/team/4.jpg" alt="">
                                    <h4></h4>
-                                   <p class="text-muted">Marketer</p>
+                                   <p class="text-muted">CMO</p>
                               </div>
                          </div>
                          <div class="col-sm-6">
                               <div class="team-member">
                                    <img class="mx-auto rounded-circle" src="img/team/5.jpg" alt="">
                                    <h4></h4>
-                                   <p class="text-muted">Web Designer</p>
+                                   <p class="text-muted">CTO</p>
                               </div>
                          </div>
                          <div class="row">
@@ -367,7 +383,7 @@ if (isset($_POST['submit'])) {
                          <div class="row">
                               <div class="col-lg-12">
                                    <?php if ($msg != "") echo "$msg<br><br>"; ?>
-                                   <form id="contactForm" action="index.php" method= "post">
+                                   <form class="" action="index.php" method= "post">
                                         <div class="row">
                                              <div class="col-md-6">
                                                   <div class="form-group">
@@ -376,86 +392,54 @@ if (isset($_POST['submit'])) {
                                                   <div class="form-group">
                                                        <input class="form-control" id="email" type="email" name="email"placeholder="Email" required data-validation-required-message="Please enter your email address.">
                                                   </div>
-                                                  <div class="form-group">
+                                                  <!-- <div class="form-group">
                                                        <input class="form-control" id="phone" type="tel" name="tel" placeholder="Phone" required data-validation-required-message="Please enter your phone number.">
 
-                                                  </div>
+                                                  </div> -->
                                              </div>
                                              <div class="col-md-6">
                                                   <div class="form-group">
                                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
                                                   </div>
                                              </div>
-                                             <button name="submit" id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
-
+                                             <center>
+                                                  <button name="submit" id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                                             </center>
                                         </div>
                                    </form>
                               </div>
                          </div>
-                    </div>
-               </section>
-
-               <!-- Footer -->
-               <footer>
-                    <div class="container">
-                         <div class="row">
-                              <div class="col-md-4">
-                                   <span class="copyright">Copyright &copy; </span>
+                         <!-- <?php if ($msg != "") echo "$msg<br><br>"; ?>
+                         <form class="" action="index.php" method="post">
+                              <input type="text" name="name" placeholder="Full name">
+                              <input type="text" name="email" placeholder="Your email">
+                              <textarea name="message" placeholder="message"></textarea>
+                              <button type="submit" name="submit">SEND MAIL</button>
+                         </center> -->
+                         <div class = "row">
+                              <div class="col-md-6">
+                                   <span class="fa-stack fa-4x">
+                                        <a href="https://www.facebook.com/compoober/" target="_blank">
+                                             <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                             <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                        </a>
+                                   </span>
                               </div>
-                              <div class="col-md-4">
-                              </div>
-                              <div class="col-md-4">
-                                   <ul class="list-inline quicklinks">
-                                        <li class="list-inline-item">
-                                             <a href="#">Privacy Policy</a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                             <a href="#">Terms of Use</a>
-                                        </li>
-                                   </ul>
-                              </div>
-                         </div>
-                    </div>
-               </footer>
-
-               <!-- Portfolio Modals -->
-
-               <!-- Modal 1 -->
-               <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                         <div class="modal-content">
-                              <div class="close-modal" data-dismiss="modal">
-                                   <div class="lr">
-                                        <div class="rl"></div>
-                                   </div>
-                              </div>
-                              <div class="container">
-                                   <div class="row">
-                                        <div class="col-lg-8 mx-auto">
-                                             <div class="modal-body">
-                                                  <!-- Project Details Go Here -->
-                                                  <h2 class="text-uppercase">Clark Botanical Garden</h2>
-                                                  <p class="item-intro text-muted"></p>
-                                                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                                                  <p>Clark Botanical is a beautiful 12 acre garden. Established in 1969, it was the former estate of Grenville Clark, who donated his home to the Brooklyn Botanical Garden. The park boasts more than 5,000 species of plants, including 12 specialty garden plants, grown with environmentally friendly compost.</p>
-                                                  <ul class="list-inline">
-                                                       <li>Location: Albertson, New York</li>
-                                                       <li></li>
-                                                       <li></li>
-                                                  </ul>
-                                                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                                       <i class="fa fa-times"></i>
-                                                       Close</button>
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
+                              <div class="col-md-6">
+                                   <span class="fa-stack fa-4x">
+                                        <a href="http://www.instagram.com/compoober" target="_blank">
+                                             <i class="fa fa-circle fa-stack-2x text-primary" styke="color: black"></i>
+                                             <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                                        </a>
+                                   </span>
                               </div>
                          </div>
-                    </div>
+                    </section>
 
-                    <!-- Modal 2 -->
-                    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                    <!-- Portfolio Modals -->
+
+                    <!-- Modal 1 -->
+                    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
                          <div class="modal-dialog">
                               <div class="modal-content">
                                    <div class="close-modal" data-dismiss="modal">
@@ -468,12 +452,12 @@ if (isset($_POST['submit'])) {
                                              <div class="col-lg-8 mx-auto">
                                                   <div class="modal-body">
                                                        <!-- Project Details Go Here -->
-                                                       <h2 class="text-uppercase">Brooklyn Botanical Garden</h2>
+                                                       <h2 class="text-uppercase">Clark Botanical Garden</h2>
                                                        <p class="item-intro text-muted"></p>
-                                                       <img class="img-fluid d-block mx-auto" src="img/portfolio/02-thumbnail.jpg" alt="">
-                                                       <p>The Brooklyn Botanical Garden was founded in 1910, and it is located in the Prospect Park neighborhood in the borough of Brooklyn. Its gardens span 52 acres, and holds over 14,000 taxa of plants. Each year, over 900,000 visitors come to see this garden beauty. </p>
+                                                       <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                                       <p>Clark Botanical is a beautiful 12 acre garden. Established in 1969, it was the former estate of Grenville Clark, who donated his home to the Brooklyn Botanical Garden. The park boasts more than 5,000 species of plants, including 12 specialty garden plants, grown with environmentally friendly compost.</p>
                                                        <ul class="list-inline">
-                                                            <li>Location: Brooklyn, New York</li>
+                                                            <li>Location: Albertson, New York</li>
                                                             <li></li>
                                                             <li></li>
                                                        </ul>
@@ -488,8 +472,8 @@ if (isset($_POST['submit'])) {
                               </div>
                          </div>
 
-                         <!-- Modal 3 -->
-                         <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+                         <!-- Modal 2 -->
+                         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
                               <div class="modal-dialog">
                                    <div class="modal-content">
                                         <div class="close-modal" data-dismiss="modal">
@@ -502,12 +486,12 @@ if (isset($_POST['submit'])) {
                                                   <div class="col-lg-8 mx-auto">
                                                        <div class="modal-body">
                                                             <!-- Project Details Go Here -->
-                                                            <h2 class="text-uppercase">Queens Botanical Garden</h2>
+                                                            <h2 class="text-uppercase">Brooklyn Botanical Garden</h2>
                                                             <p class="item-intro text-muted"></p>
-                                                            <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                                                            <p>Founded during the 1939 New York World's Fair in Queens, the Queens Botanical Garden boasts a hefty 39 acres. Its main features are rose, bee, herb, wedding, and perennial gardens. It was designed to be an urban oasis where people, plants, and cultures can be celebrated through inspiring gardens.</p>
+                                                            <img class="img-fluid d-block mx-auto" src="img/portfolio/02-thumbnail.jpg" alt="">
+                                                            <p>The Brooklyn Botanical Garden was founded in 1910, and it is located in the Prospect Park neighborhood in the borough of Brooklyn. Its gardens span 52 acres, and holds over 14,000 taxa of plants. Each year, over 900,000 visitors come to see this garden beauty. </p>
                                                             <ul class="list-inline">
-                                                                 <li>Location: Queens, New York</li>
+                                                                 <li>Location: Brooklyn, New York</li>
                                                                  <li></li>
                                                                  <li></li>
                                                             </ul>
@@ -522,8 +506,8 @@ if (isset($_POST['submit'])) {
                                    </div>
                               </div>
 
-                              <!-- Modal 4 -->
-                              <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+                              <!-- Modal 3 -->
+                              <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
                                    <div class="modal-dialog">
                                         <div class="modal-content">
                                              <div class="close-modal" data-dismiss="modal">
@@ -536,12 +520,12 @@ if (isset($_POST['submit'])) {
                                                        <div class="col-lg-8 mx-auto">
                                                             <div class="modal-body">
                                                                  <!-- Project Details Go Here -->
-                                                                 <h2 class="text-uppercase">Central Park Conservatory Garden</h2>
+                                                                 <h2 class="text-uppercase">Queens Botanical Garden</h2>
                                                                  <p class="item-intro text-muted"></p>
-                                                                 <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                                                                 <p>Located in the famous Central Park, the Central Park Conservancy is a beautiful 6 acre formal garden. It has three distinct sections with three separate styles: Italian, French, and English. The garden allows for a peaceful escape from the bustling city life, and is also a good place for intimate weddings.</p>
+                                                                 <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+                                                                 <p>Founded during the 1939 New York World's Fair in Queens, the Queens Botanical Garden boasts a hefty 39 acres. Its main features are rose, bee, herb, wedding, and perennial gardens. It was designed to be an urban oasis where people, plants, and cultures can be celebrated through inspiring gardens.</p>
                                                                  <ul class="list-inline">
-                                                                      <li>Location: Manhattan, New York</li>
+                                                                      <li>Location: Queens, New York</li>
                                                                       <li></li>
                                                                       <li></li>
                                                                  </ul>
@@ -556,8 +540,8 @@ if (isset($_POST['submit'])) {
                                         </div>
                                    </div>
 
-                                   <!-- Modal 5 -->
-                                   <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+                                   <!-- Modal 4 -->
+                                   <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog">
                                              <div class="modal-content">
                                                   <div class="close-modal" data-dismiss="modal">
@@ -570,12 +554,12 @@ if (isset($_POST['submit'])) {
                                                             <div class="col-lg-8 mx-auto">
                                                                  <div class="modal-body">
                                                                       <!-- Project Details Go Here -->
-                                                                      <h2 class="text-uppercase">Old Wesbury Garden</h2>
+                                                                      <h2 class="text-uppercase">Central Park Conservatory Garden</h2>
                                                                       <p class="item-intro text-muted"></p>
-                                                                      <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                                                                      <p>The former esate of John Shaffer Phipps, the garden boasts 200 acres of formal gardens, landscaped grounds, woodlands, along with a mix of ponds and lakes. The Westbury House itself is furnished with fine English antiques and decorative arts from the long ago years of family residence. </p>
+                                                                      <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                                                                      <p>Located in the famous Central Park, the Central Park Conservancy is a beautiful 6 acre formal garden. It has three distinct sections with three separate styles: Italian, French, and English. The garden allows for a peaceful escape from the bustling city life, and is also a good place for intimate weddings.</p>
                                                                       <ul class="list-inline">
-                                                                           <li>Location: Nassau County, New York</li>
+                                                                           <li>Location: Manhattan, New York</li>
                                                                            <li></li>
                                                                            <li></li>
                                                                       </ul>
@@ -590,8 +574,8 @@ if (isset($_POST['submit'])) {
                                              </div>
                                         </div>
 
-                                        <!-- Modal 6 -->
-                                        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <!-- Modal 5 -->
+                                        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
                                              <div class="modal-dialog">
                                                   <div class="modal-content">
                                                        <div class="close-modal" data-dismiss="modal">
@@ -604,12 +588,12 @@ if (isset($_POST['submit'])) {
                                                                  <div class="col-lg-8 mx-auto">
                                                                       <div class="modal-body">
                                                                            <!-- Project Details Go Here -->
-                                                                           <h2 class="text-uppercase">New York Botanical Garden</h2>
+                                                                           <h2 class="text-uppercase">Old Wesbury Garden</h2>
                                                                            <p class="item-intro text-muted"></p>
-                                                                           <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                                                                           <p>A National Historic Landmark, the New York Botanical Garden features an expansive 250 acres of verdant landscape that supports over one million living plants. There are extensive collections of plants, ranging from tropical, temperate, and desert flora. Over a million visitors visit the garden per year, and it is an iconic living museum. It is one of the greatest botanical gardens in the world, and the largest in any city anywhere else in the United States.</p>
+                                                                           <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+                                                                           <p>The former esate of John Shaffer Phipps, the garden boasts 200 acres of formal gardens, landscaped grounds, woodlands, along with a mix of ponds and lakes. The Westbury House itself is furnished with fine English antiques and decorative arts from the long ago years of family residence. </p>
                                                                            <ul class="list-inline">
-                                                                                <li>Location: Bronx, New York</li>
+                                                                                <li>Location: Nassau County, New York</li>
                                                                                 <li></li>
                                                                                 <li></li>
                                                                            </ul>
@@ -624,20 +608,54 @@ if (isset($_POST['submit'])) {
                                                   </div>
                                              </div>
 
-                                             <!-- Bootstrap core JavaScript -->
-                                             <script src="vendor/jquery/jquery.min.js"></script>
-                                             <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                                             <!-- Modal 6 -->
+                                             <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                       <div class="modal-content">
+                                                            <div class="close-modal" data-dismiss="modal">
+                                                                 <div class="lr">
+                                                                      <div class="rl"></div>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="container">
+                                                                 <div class="row">
+                                                                      <div class="col-lg-8 mx-auto">
+                                                                           <div class="modal-body">
+                                                                                <!-- Project Details Go Here -->
+                                                                                <h2 class="text-uppercase">New York Botanical Garden</h2>
+                                                                                <p class="item-intro text-muted"></p>
+                                                                                <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+                                                                                <p>A National Historic Landmark, the New York Botanical Garden features an expansive 250 acres of verdant landscape that supports over one million living plants. There are extensive collections of plants, ranging from tropical, temperate, and desert flora. Over a million visitors visit the garden per year, and it is an iconic living museum. It is one of the greatest botanical gardens in the world, and the largest in any city anywhere else in the United States.</p>
+                                                                                <ul class="list-inline">
+                                                                                     <li>Location: Bronx, New York</li>
+                                                                                     <li></li>
+                                                                                     <li></li>
+                                                                                </ul>
+                                                                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                                                                     <i class="fa fa-times"></i>
+                                                                                     Close</button>
+                                                                                </div>
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
 
-                                             <!-- Plugin JavaScript -->
-                                             <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                                                  <!-- Bootstrap core JavaScript -->
+                                                  <script src="vendor/jquery/jquery.min.js"></script>
+                                                  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                                             <!-- Contact form JavaScript -->
-                                             <script src="js/jqBootstrapValidation.js"></script>
-                                             <script src="js/contact_me.js"></script>
+                                                  <!-- Plugin JavaScript -->
+                                                  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                                             <!-- Custom scripts for this template -->
-                                             <script src="js/agency.min.js"></script>
+                                                  <!-- Contact form JavaScript -->
+                                                  <script src="js/jqBootstrapValidation.js"></script>
+                                                  <script src="js/contact_me.js"></script>
 
-                                        </body>
+                                                  <!-- Custom scripts for this template -->
+                                                  <script src="js/agency.min.js"></script>
 
-                                        </html>
+                                             </body>
+
+                                             </html>
