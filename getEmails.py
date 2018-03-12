@@ -9,14 +9,13 @@ from urllib2 import urlopen
 import urllib
 
 def go():
-    html = "http://jajas.store/emails.csv"
-    strEmails = str(BeautifulSoup(urlopen(html).read(), 'html'))
-
     print 'Content-type: text/html\n\n'
 
     print '<html><body><table border="1">'
 
-    lEmail = strEmails.split('\n')
+    straw = open('emails.csv', 'rU')
+
+    lEmail = straw.read().split('\n')
     for wholeEmail in lEmail:
         print '<tr>'
         #loec = ListOfComponents --> [name, email, phone, bod]

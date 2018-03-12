@@ -15,12 +15,12 @@ def go():
     straw.close()
 
     #write new one
-    newEmail = si[0]+','+si[1]+','+si[2]+','+si[3]+'\n'+oldEmails
-    straw = open('emails.csv', 'w+')
-    straw.write(newEmail)
-    straw.close()
+    newEmail = si[0] + ',' + si[1] + ',' + si[2] + ',' + si[3] + '\n' + oldEmails
+    lol = open("emails.csv", 'w+')
+    lol.write(newEmail)
+    lol.close()
     
     print 'Content-type: text/html\n\n'
-    print """<html><head><script type="text/javascript"> window.location.replace("http://jajas.store/"); </script></head><body>We should be redirecting you shortly. If any issue arises, please email jchirinos@jajas.store :)</body></html>"""
+    print """<html><head><script type="text/javascript"> window.location.replace("http://jajas.store/#"); </script></head><body>We should be redirecting you shortly. If any issue arises, please email jchirinos@jajas.store :)</body></html>"""
 
 go()
