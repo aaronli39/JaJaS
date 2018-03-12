@@ -1,3 +1,38 @@
+<?php
+$msg = "";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require './test/phpmailer/phpmailer/src/Exception.php';
+require './test/phpmailer/phpmailer/src/PHPMailer.php';
+require './test/phpmailer/phpmailer/src/SMTP.php';
+
+if (isset($_POST['submit'])) {
+     $first_name = $_POST['name']; // required
+     $email_from = $_POST['email']; // required
+     $telephone = $_POST['tel']; // not required
+     $comments = $_POST['message']; // required
+
+     $mail = new PHPMailer();
+	$mail->Host = "smtp.gmail.com";
+	$mail->SMTPAuth = true;
+	$mail->Username = "aaronli39@gmail.com";
+	$mail->Password = "abcabcabcd123LI";
+	$mail->SMTPSecure = "ssl";
+	$mail->Port = 587;
+     $mail->addAddress('jchirinos@jajas.store');
+     $mail->setFrom($email_from);
+     $mail->Subject = "Biggie Peepee";
+     $mail->isHTML(true);
+     $mail->Body = $comments;
+
+     if ($mail->send())
+     $msg = "You email has been sent, thank you!";
+     else
+     $msg = "Please try again!";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,7 +182,7 @@
 </section>
 
 <!-- Sell -->
-<section class="bg-light" id="sell">
+<section class="bg" id="sell">
      <div class="container">
           <h2 class="section-heading text-uppercase">Sell</h2>
      </div>
@@ -331,7 +366,8 @@
                          </div>
                          <div class="row">
                               <div class="col-lg-12">
-                                   <form id="contactForm" action="html_form_send.php" method= "post">
+                                   <?php if ($msg != "") echo "$msg<br><br>"; ?>
+                                   <form id="contactForm" action="index.php" method= "post">
                                         <div class="row">
                                              <div class="col-md-6">
                                                   <div class="form-group">
